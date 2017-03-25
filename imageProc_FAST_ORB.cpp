@@ -1,9 +1,6 @@
 #include <ros/ros.h>
-//#include <std_msgs/String.h>
-//#include <sensor_msgs/Image.msg>
 #include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>
-#include "opencv2/features2d/features2d.hpp"
 #include <opencv2/features2d/features2d.hpp>
 #include <opencv2/core/core.hpp>
 #include <cv_bridge/cv_bridge.h>
@@ -41,13 +38,10 @@ int main(int argc, char** argv)
    Mat output;
    //drawKeypoints(img, keypoints, output, keypointColor, DrawMatchesFlags::DEFAULT);
    drawKeypoints(img, keypoints, output, Scalar::all(-1));
+   
    cout << descriptors << endl;
    imshow("Keypoints 1", output);
       waitKey(0);
-
-   //imwrite("siftIm.jpg", output);
-   
-   cout << "made it this far" << endl;
 
    return 0;
 }
